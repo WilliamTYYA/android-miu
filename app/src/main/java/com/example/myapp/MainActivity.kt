@@ -26,62 +26,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                BoxScreen()
             }
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier.background(
-                    color = Color.Blue
-                )
-                .fillMaxWidth(),
-        textAlign = TextAlign.Left,
-        color = Color.Red,
-        fontSize = 30.sp,
-        fontWeight = FontWeight.Bold
-    )
-}
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES
-)
-@Composable
-fun GreetingDarkThemePreview() {
-    MyAppTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            Greeting(
-                name = "Android",
-                modifier = Modifier.padding(innerPadding)
-            )
-        }
-    }
-}
-
-@Preview(
-    showBackground = true,
-    showSystemUi = true,
-//    uiMode = Configuration.UI_MODE_NIGHT_YES
-)
-@Composable
-fun GreetingLightThemePreview() {
-    MyAppTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            Greeting(
-                name = "Android",
-                modifier = Modifier.padding(innerPadding)
-            )
         }
     }
 }
