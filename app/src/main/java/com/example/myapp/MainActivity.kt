@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -53,11 +54,34 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(
     showBackground = true,
-    showSystemUi = true
+    showSystemUi = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES
 )
 @Composable
-fun GreetingPreview() {
+fun GreetingDarkThemePreview() {
     MyAppTheme {
-        Greeting("Android")
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            Greeting(
+                name = "Android",
+                modifier = Modifier.padding(innerPadding)
+            )
+        }
+    }
+}
+
+@Preview(
+    showBackground = true,
+    showSystemUi = true,
+//    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
+@Composable
+fun GreetingLightThemePreview() {
+    MyAppTheme {
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            Greeting(
+                name = "Android",
+                modifier = Modifier.padding(innerPadding)
+            )
+        }
     }
 }
