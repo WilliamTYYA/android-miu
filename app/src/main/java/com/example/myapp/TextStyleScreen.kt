@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.TextStyle
@@ -26,7 +27,7 @@ fun TextStyleScreen(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
         ) {
             Text(
-                text = "Welcome!",
+                text = "Welcome to Maharishi Internation University!",
                 color = Color.Red,
                 textDecoration = TextDecoration.Underline,
                 modifier = Modifier.fillMaxWidth(),
@@ -42,6 +43,14 @@ fun TextStyleScreen(modifier: Modifier = Modifier) {
                             x = 5f,
                             y = 5f
                         )
+                    ),
+                    brush = Brush.linearGradient(
+                        colors = listOf(
+                            Color.Red,
+                            Color.Blue,
+                            Color.Green,
+                            Color.Red
+                        )
                     )
                 )
             )
@@ -52,7 +61,6 @@ fun TextStyleScreen(modifier: Modifier = Modifier) {
 @Preview(
     showSystemUi = true
 )
-@Preview
 @Composable
 private fun TextStyleScreenPreview() {
     TextStyleScreen()
