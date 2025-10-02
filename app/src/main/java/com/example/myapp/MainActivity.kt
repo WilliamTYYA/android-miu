@@ -26,7 +26,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyAppTheme {
-                BoxShapeScreen()
+//                BoxShapeScreen()
+                RegistrationScreen()
             }
         }
     }
